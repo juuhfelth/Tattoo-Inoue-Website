@@ -1,0 +1,125 @@
+.section_flashtattoo {
+    background-image: url("../assets/Background-flash tattoo.svg");
+    padding: 6em;
+    position: relative;
+    overflow: hidden;
+}
+
+.decoracao_flashtattoo {
+    position: absolute;
+    top: -129px;
+    left: -470px;
+    pointer-events: none;
+}
+
+.decoracao_flashtattoo img {
+    object-fit: contain;
+    transform: scale(1.3);
+}
+
+.flashtattoo_title {
+    font-family: var(--fonte-secundaria);
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.flashtattoo_subtitle {
+    font-family: var(--fonte-principal);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+    margin-bottom: 0.8rem;
+}
+
+.container_flashtattoo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container_column_flashtattoo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    justify-content: center;
+    position: relative;
+}
+
+.flashtattoo__decoracao-promocoes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flashtattoo_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    transition: 0.5s;
+    position: relative;
+}
+
+.flashtattoo_item-img {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 30px 0 ;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.flashtattoo_item-img img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.flashtattoo_item-text {
+    letter-spacing: 2px;
+    font-family: var(--fonte-logo-header);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: white;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flashtattoo_text {
+    color: #DDA44F;
+    border-bottom: solid 1px #DDA44F;
+    margin-bottom: 1rem;
+}
+
+.flashtattoo_subtext {
+    font-size: 2rem;
+}

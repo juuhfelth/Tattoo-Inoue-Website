@@ -1,0 +1,9 @@
+{
+  "name": "tattoo-inoue-local",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": { "start": "node --env-file-if-exists=.env server/index.js", "test": "node --test tests/auth.test.js" },
+  "dependencies": { "express": "^5.1.0", "express-session": "^1.18.2" }
+}

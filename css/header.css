@@ -1,0 +1,76 @@
+.container_header {
+    background-color: #3B0E11;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--amarelo);
+}
+
+.navbar {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3rem;
+}
+
+.container_logo {
+    letter-spacing: 2px;
+    font-family: var(--fonte-logo-header);
+    font-weight: 400;
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.lista_menu-link {
+    text-decoration: none;
+    color: var(--amarelo);
+    letter-spacing: 2px;
+    font-family:  var(--fonte-principal);
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    transition: border-bottom 0.2s ease;
+    position: relative;   
+}
+
+.texto__login {
+    text-decoration: none;
+    color: white;
+    font-family:  "Poppins", sans-serif;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+    background-color: #000;
+    border-radius: 60px;
+    transition: 0.3s;
+}
+
+.lista_menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.icon_agenda {
+    margin-right: 2rem;
+}
+
+/* Distribuicao do cabecalho e icones da conta. */
+.navbar { gap: 2rem; }
+.navbar .logo, .navbar .container_icons { flex-shrink: 0; }
+.navbar .lista_menu { gap: clamp(.5rem, 2vw, 3rem); }
+.container_icons { display: flex; align-items: center; gap: 12px; }
+.container_icons .icon_agenda { margin-right: 0; }
+.container_icons > a, .container_icons .auth-user { display: inline-flex; align-items: center; justify-content: center; }
+.container_icons .auth-user[hidden] { display: none !important; }
+.container_icons img { display: block; object-fit: contain; }
+.container_icons .icon_user { width: 36px; height: 36px; }
+.container_icons .icon_logout { width: 48px; height: 36px; }
+.container_icons .auth-logout { display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.container_icons .auth-logout:hover { background: transparent; opacity: .8; }
