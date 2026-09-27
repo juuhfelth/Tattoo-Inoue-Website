@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive-desktop.css">
+    <link rel="stylesheet" href="agendamento.html">
+    <title>Tattoo Inoue</title>
+</head>
+<body>
+    <header class="container_header">
+        <nav class="navbar">
+
+            <div class="logo">
+                <a href="#" class="container_logo">TATTOO INOUE</a>
+            </div>
+
+            <ul class="lista_menu">
+                <li class="lista_menu-item">
+                    <a href="#inicio" class="lista_menu-link">Início</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="#portfolio" class="lista_menu-link">Portfólio</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="#flashtattoo" class="lista_menu-link">Flashtatoo</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="#sobre__mim" class="lista_menu-link">Sobre mim</a>
+                </li>
+            </ul>
+
+            <div class="container_icons">
+                <a href="agendamento.html" class="link_icon__agenda"><img class="icon_agenda" src="assets/agenda item.svg"></a>
+                <a href="#" class="link_icon__login"><img class="icon_login" src="assets/login item.svg"></a>
+                <span class="auth-user" hidden><img class="icon_user" src="assets/User.svg" alt="Usuário conectado"></span>
+                <button type="button" class="auth-logout" aria-label="Sair da conta" title="Sair da conta" hidden>
+                    <img class="icon_logout" src="assets/Logout.svg" alt="">
+                </button>
+                <span class="auth-logout-message" role="status" aria-live="polite" hidden></span>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section class="container_main" id="inicio">
+        <div class="container_imagem">
+
+            <div class="imagem-item">
+                <img class="imagem" src="assets/Background.svg">
+            </div>
+
+            <div class="imagem_texto">
+                <h1 class="imagem_texto-title">TATTOO INOUE</h1>
+                <img class="imagem_decoracao" src="assets/Decoracao - Home.svg" alt="leque vermelho">
+                <p class="imagem__texto-p">TATUAGENS NEO-ORIENTAL · SÃO PAULO</p>
+                <a class="imagem_texto-a" href="https://www.youtube.com">Agende sua tatuagem</a>
+            </div>  
+
+            <div class="hero-overlay"></div>
+
+        </div>
+    </section>
+
+    <section class="section_portfolio" id="portfolio">
+
+        <h2 class="portfolio_subtitle">Portfólio</h2>
+        <h3 class="portfolio_title">Coleção de obras</h3>
+
+        <div class="container_carrossel">
+
+            <button class="nav_button prev" onclick="prevSlide()">‹</button>
+
+            <div class="carrossel" id="carrossel">
+
+                <div class="carrossel_item" onclick="goToSlide(0)">
+                    <img src="assets/flor.png" alt="tatuagem 1">
+                </div>
+                <div class="carrossel_item" onclick="goToSlide(1)">
+                    <img src="assets/kitsune.jpg" alt="tatuagem 2">
+                </div>
+                <div class="carrossel_item" onclick="goToSlide(2)">
+                    <img src="assets/Neko.png" alt="tatuagem 3">
+                </div>
+                <div class="carrossel_item" onclick="goToSlide(3)">
+                    <img src="assets/sapo.jpg" alt="tatuagem 4">
+                </div>
+                <div class="carrossel_item" onclick="goToSlide(4)">
+                    <img src="assets/tigre.jpg" alt="tatuagem 5">
+                </div>                                                            
+
+            </div>
+
+            <button class="nav_button next" onclick="nextSlide()">›</button>
+
+        </div>
+        
+        <div class="portfolio_link">
+            <a href="https://www.instagram.com/tattoo.inoue/" class="link_portfolio"><p class="link_portfolio-text">Portfólio completo</p></a>
+        </div>
+
+        <div class="decoracao_portfolio">
+            <div class="decoracao_portfolio-leque">
+                <!--<img src="assets/leque vermelho.svg" alt="leque vermelho">-->
+            </div>
+            <div class="decoracao_portfolio-hiragana">
+                <img src="assets/sakuhinshu.svg">
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="section_flashtattoo" id="flashtattoo">
+
+        <h2 class="flashtattoo_subtitle">PROMOÇÕES</h2>
+        <h3 class="flashtattoo_title">Flashtatoo</h3>
+
+        <div class="container_flashtattoo">
+
+            <div class="container_column_flashtattoo">
+                
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Bichinho madeira png.png" alt="flashtattoo1">
+                    </div>
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">6cm</p>
+                        <p class="flashtattoo_subtext">R$220,00</p>
+                    </div>
+
+                </div>
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Mascara gatinho png.png" alt="flashtattoo1">
+                    </div>
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">11cm</p>
+                        <p class="flashtattoo_subtext">R$340,00</p>
+                    </div>
+
+                </div>               
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Mascara.png" alt="flashtattoo1">
+                    </div>
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">14cm</p>
+                        <p class="flashtattoo_subtext">R$370,00</p>
+                    </div>
+
+                </div>    
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/No face.svg" alt="flashtattoo1">
+                    </div>    
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">7cm</p>
+                        <p class="flashtattoo_subtext">R$335,00</p>
+                    </div>    
+
+                </div>
+
+                <div class="flashtattoo__decoracao-promocoes">
+                    <img class="decoracao-promocoes" src="assets/detalhe - promoções.svg">
+                </div>
+                
+
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Totoro2.svg" alt="flashtattoo1">
+                    </div>    
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">9cm</p>
+                        <p class="flashtattoo_subtext">R$330,00</p>
+                    </div>    
+
+                </div>  
+ 
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Oni.png" alt="flashtattoo1">
+                    </div>    
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">14cm</p>
+                        <p class="flashtattoo_subtext">R$370,00</p>
+                    </div>    
+
+                </div>  
+                
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/Pokemon.svg" alt="flashtattoo1">
+                    </div>    
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">9cm</p>
+                        <p class="flashtattoo_subtext">R$345,00</p>
+                    </div>    
+
+                </div>  
+
+                <div class="flashtattoo_item">
+
+                    <div class="flashtattoo_item-img">
+                        <img class="flashtattoo_img" src="assets/flash tattoo/totoro teste.png" alt="flashtattoo1">
+                    </div>    
+                    <div class="flashtattoo_item-text">
+                        <p class="flashtattoo_text">7cm</p>
+                        <p class="flashtattoo_subtext">R$320,00</p>
+                    </div>    
+
+                </div>                  
+
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="section_sobre__mim" id="sobre__mim">
+
+        <img class="sobre__mim-decoracao" src="assets/higanbana branca 1.svg" alt="" aria-hidden="true" id="sobre__mim">
+
+        <div class="sobre__mim-container">
+            <div class="div-1__sobre-mim">
+                <img class="sobre__mim-imagem" src="assets/foto sobre mim.svg" alt="Retrato de Milene, tatuadora especialista em arte neo-oriental">
+                <h2 class="title__especialidade">ESPECIALIDADE</h2>
+                <p class="text__especialidade">Arte Neo-oriental</p>
+            </div>
+
+            <div class="sobre__mim-conteudo">
+                <p class="sobre__mim-label">SOBRE MIM</p>
+                <h2 class="sobre__mim-titulo">Saiba mais<br>sobre mim</h2>
+                <div class="sobre__mim-linha"></div>
+
+                <div class="sobre__mim-textos">
+                    <p>Me chamo Milene, tenho 21 anos, e comecei a tatuar durante a pandemia, transformando em um ponto de virada incrível na minha vida. Desde então a arte se tornou uma paixão, mas também minha profissão. Hoje sou extremamente grata por poder eternizar histórias e sentimentos na pele das pessoas.</p>
+
+                    <p>A minha especialidade é a arte oriental, algo que carrego com muito orgulho por conta da minha descendência japonesa. Sempre me conectei com essa estética, com seus traços fortes, simbologia e fluidez.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title">
+        <button type="button" class="auth-close" aria-label="Fechar modal">×</button>
+        <h2 id="auth-title">Faça seu Login</h2>
+        <p id="auth-text">Seja bem-vindo! Acesse sua conta</p>
+        <p class="auth-message" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <form>
+    <div class="auth-fields">
+        <div class="auth-field" data-register hidden>
+            <label for="auth-name">Nome</label>
+            <input
+                id="auth-name"
+                name="name"
+                autocomplete="name"
+                disabled
+            >
+        </div>
+
+        <div class="auth-field">
+            <label for="auth-email">E-mail</label>
+            <input
+                id="auth-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+            >
+        </div>
+
+        <div class="auth-field">
+            <label for="auth-password">Senha</label>
+            <input
+                id="auth-password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+            >
+        </div>
+
+        <div class="auth-field" data-register hidden>
+            <label for="auth-confirm">Confirme a senha</label>
+            <input
+                id="auth-confirm"
+                name="confirmPassword"
+                type="password"
+                autocomplete="new-password"
+                disabled
+            >
+        </div>
+    </div>
+
+    <button type="submit" class="auth-submit">
+        Entrar
+    </button>
+
+    <p class="auth-switch-p">
+        <span class="auth-switch-text">Não possui uma conta? </span>
+        <button type="button" class="auth-switch">
+            Cadastre-se
+        </button>
+    </p>
+</form>
+    </dialog>
+    <script src="auth.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,55 @@
+.lista_menu-link:hover {
+    transition: 0.3s;
+    color: white;
+}
+
+.imagem_texto-a:hover {
+    background-color: #4D4D4D;
+    border-color: #808080;
+}
+
+.nav_button:hover {
+    background-color: #8B4949;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.flashtattoo_item-text:hover {
+    opacity: 1; 
+}
+
+.flashtattoo_item:hover {
+    transform: scale(1.1);
+    transition: 0.5s; 
+    opacity: 1;   
+    cursor: pointer;
+}
+
+
+.flashtattoo_item:hover .flashtattoo_item-img {
+    filter: brightness(0.15);
+}
+
+.lista_menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--amarelo);
+    transition: width 0.3s ease;
+}
+
+.lista_menu-link.active {
+    color: white;
+}
+
+.lista_menu-link:hover::after, .lista_menu-link.active::after {
+    width: 100%;
+}
+
+.auth-dialog--register:hover .auth-submit:hover {
+    background-color: #4D4D4D;
+    border-color: #808080;  
+    transition: 0.2s;
+}

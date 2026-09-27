@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Tattoo Inoue - Agendamento</title>
+</head>
+<body>
+    <header class="container_header">
+        <nav class="navbar">
+
+            <div class="logo">
+                <a href="#" class="container_logo">TATTOO INOUE</a>
+            </div>
+
+            <ul class="lista_menu">
+                <li class="lista_menu-item">
+                    <a href="index.html#inicio" class="lista_menu-link">Início</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="index.html#portfolio" class="lista_menu-link">Portfólio</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="index.html#flashtattoo" class="lista_menu-link">Flashtatoo</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="index.html#sobre__mim" class="lista_menu-link">Sobre mim</a>
+                </li>
+            </ul>
+
+            <div class="container_icons">
+                <a href="#" class="link_icon__agenda"><img class="icon_agenda" src="assets/agenda item.svg"></a>
+                <a href="#" class="link_icon__login"><img class="icon_login" src="assets/login item.svg"></a>
+                <span class="auth-user" hidden><img class="icon_user" src="assets/User.svg" alt="Usuário conectado"></span>
+                <button type="button" class="auth-logout" aria-label="Sair da conta" title="Sair da conta" hidden>
+                    <img class="icon_logout" src="assets/Logout.svg" alt="">
+                </button>
+                <span class="auth-logout-message" role="status" aria-live="polite" hidden></span>
+            </div>
+
+        </nav>
+
+    </header>
+
+<main class="agendamento">
+
+        <div class="container_titulo">
+            <h1 class="agendamento-title">AGENDAMENTO</h1> 
+            <p class="agendamento-text">Conte-nos sobre sua ideia de tatuagem</p>
+        </div>
+
+        <div class="containers_agendamento">
+            <div class="container_ideia">
+                <h2 class="ideia-title">DESCREVA SUA IDEIA</h2>
+                
+                <div class="container_ideia_1">
+                    <label for="descricao-tattoo" class="label_descricao">DESCRIÇÃO DA TATUAGEM</label>
+                    <textarea id="descricao-tattoo" class="input_descrição" placeholder="Descreva sua ideia de tatuagem..."></textarea>
+                </div>
+
+                <div class="container_ideia_2">
+                    <div class="container_rt">
+                        <label for="regiao-corpo" class="label_regiao">REGIÃO DO CORPO</label>
+                        <textarea type="text" id="regiao-corpo" class="input_regiao" placeholder="Ex: Braço"></textarea>
+                    </div>
+
+                    <div class="container_rt">
+                        <label for="tamanho-tattoo" class="label_tamanho">TAMANHO (CM)</label>
+                        <textarea type="text" id="tamanho-tattoo" class="input_tamanho" placeholder="Ex: 10cm"></textarea>
+                    </div>
+                </div>
+
+                <div class="container_ideia_3">
+                    <label for="primeira-tattoo" class="label_primeira">PRIMEIRA TATUAGEM?</label>
+
+                    <div class="opcoes_radio">
+                        <label class="opcao_radio">
+                            <input type="radio" name="primeira-tattoo" value="sim">
+                            Sim
+                        </label>
+
+                        <label class="opcao_radio">
+                            <input type="radio" name="primeira-tattoo" value="nao">
+                            Não
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="container_ideia_4">
+                    <label for="possui-alergia" class="label_alergia">POSSUI ALERGIAS?</label>
+
+                    <div class="opcoes_radio">
+                        <label class="opcao_radio">
+                            <input type="radio" name="possui-alergia" value="sim">
+                            Sim
+                        </label>
+
+                        <label class="opcao_radio">
+                            <input type="radio" name="possui-alergia" value="nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+
+                <div class="container_ideia_5">
+                    <label for="referencia" class="label_referencia">REFERÊNCIA (URL OU UPLOAD)</label>
+
+                    <div class="linha_referencia">
+                        <textarea type="text" id="referencia" class="input_referencia" placeholder="Cole o link da imagem"></textarea>
+                        <button class="upload-a" type="button"><img class="seta-upload" src="assets/agendamento/Icon_upload.png"> Upload </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container_agendar">
+                <h2 class="agenda-title">VAMOS AGENDAR?</h2>
+                <p class="agenda-subtitle"><img class="mini-agenda" src="assets/agendamento/mini_agenda.png">ESCOLHA UMA DATA</p>
+
+                <div class="wrapper">
+                    <header>
+                        <p class="current-date"></p>
+                            <div class="icons">
+                                <span id="prev" class="material-symbols-rounded"><img src="assets/agendamento/seta_esquerda.png"></span>
+                                <span id="next" class="material-symbols-rounded"><img src="assets/agendamento/seta_direita.png"></span>
+                            </div>
+                    </header>
+
+                    <div class="calendar">
+                        <ul class="weeks">
+                            <li>Dom</li>
+                            <li>Seg</li>
+                            <li>Ter</li>
+                            <li>Qua</li>
+                            <li>Qui</li>
+                            <li>Sex</li>
+                            <li>Sab</li>
+                        </ul>
+                    
+                        <ul class="days"></ul>
+                    </div>
+                </div>
+
+                <div class="container_horario">
+                    <h2 class="horario-title">HORÁRIO DISPONÍVEL</h2>
+
+                    <div class="horarios_1">
+                        <button type="button" class="btn_horario">09:00</button>
+                        <button type="button" class="btn_horario">10:00</button>
+                        <button type="button" class="btn_horario">11:00</button>
+                        <button type="button" class="btn_horario">13:00</button>
+                    </div>
+                    <div class="horarios_2">
+                        <button type="button" class="btn_horario">14:00</button>
+                        <button type="button" class="btn_horario">15:00</button>
+                        <button type="button" class="btn_horario">16:00</button>
+                        <button type="button" class="btn_horario">17:00</button>
+                    </div>
+
+                </div>
+
+                    <button class="enviar_agendamento">ENVIAR SOLICITAÇÃO DE AGENDAMENTO</button>
+
+            </div>
+        </div>
+        <script src="calendario.js"></script>
+    </main>

@@ -1,0 +1,368 @@
+/* Estilos exclusivos da autenticacao; os estilos da pagina permanecem intactos. */
+.link_icon__login[hidden] { 
+    display: none !important; 
+}
+
+.auth-dialog {
+  box-sizing: border-box;
+  position: fixed;
+  margin: auto;
+  width: min(480px, calc(100vw - 24px));
+  height: auto;
+  max-height: calc(80dvh - 24px);
+  padding: 110px 36px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 16px;
+  font-family: var(--fonte-principal);
+  background: #f0f0f02c;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 47px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.auth-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-dialog::backdrop { 
+    background: rgb(0 0 0 / 40%); 
+}
+
+.auth-dialog *, .auth-dialog *::before, .auth-dialog *::after { 
+    box-sizing: border-box; 
+}
+
+.auth-dialog h2 { 
+    font: 700 3.5rem var(--fonte-secundaria); 
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth-text { 
+    margin: 0 0 2rem 0; 
+    font: 300 20px  var(--fonte-principal); 
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-dialog label { 
+    display: block; 
+    margin: .75rem 0 .50rem; 
+}
+
+.auth-dialog input { 
+    display: block; 
+    width: 100%; 
+    padding: .65rem; 
+    border: 2px solid #fff; 
+    border-radius: 8px; 
+    background: transparent; 
+    color: white; 
+    font: inherit; 
+    font-size: 16px; 
+}
+
+.auth-dialog button { 
+    cursor: pointer; 
+    font: inherit; 
+}
+
+.auth-close { 
+    position: absolute; 
+    top: .6rem; 
+    right: .8rem; 
+    border: 0; 
+    background: transparent; 
+    color: #3b0e11; 
+    font-size: 1.8rem !important; 
+    padding: .25rem .5rem; 
+}
+
+.auth-submit { 
+    width: 100%; 
+    margin: 1.25rem 0 1rem; 
+    padding: .65rem; 
+    background: #772d31; 
+    border: 2px solid #8c5458; 
+    border-radius: 4px; 
+    color: white;
+}
+
+.auth-dialog:not(.auth-dialog--register) .auth-submit {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    margin: 38px auto 6px;
+    padding: 10px 16px;
+    transition: 0.2s;
+    border: 2px solid #8c5458;
+    border-radius: 0;
+    background: #772d31;
+
+    font-family: var(--fonte-secundaria);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.auth-switch { 
+    border: 0; 
+    padding: 0; 
+    color: #fff; 
+    background: transparent; 
+    text-decoration: underline; 
+
+}
+
+.auth-switch-p {
+    font-size: 16px;
+    text-align: center;
+}
+
+.auth-dialog :focus-visible { 
+    outline: 3px solid #a1353c; 
+    outline-offset: 3px; 
+}
+
+.auth-dialog button:disabled { 
+    opacity: .65; 
+    cursor: wait; 
+}
+
+.auth-message { 
+    margin-bottom: .5rem; 
+    color: #a1353c; 
+    overflow-wrap: anywhere; 
+}
+
+.auth-message[data-success="true"] { 
+    color: #285332; 
+}
+
+.auth-dialog::-webkit-scrollbar {
+  display: none;
+}
+
+/* Aparência exclusiva do cadastro */
+.auth-dialog.auth-dialog--register {
+    width: min(620px, calc(100vw - 32px));
+    height: auto;
+    max-height: calc(65dvh - 32px);
+    padding: 64px 64px 56px;
+
+    border-radius: 38px;
+    background: rgba(100, 100, 100, 0.42);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    overflow: hidden;
+}
+
+/* Evita comprimir ou centralizar conteúdo que exceda a altura */
+.auth-dialog.auth-dialog--register[open] {
+    display: block;
+}
+
+/* Título */
+.auth-dialog--register h2 {
+    display: block;
+    margin: 0 0 52px;
+
+    font-family: var(--fonte-secundaria);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+}
+
+/* A referência não possui subtítulo */
+.auth-dialog--register #auth-text {
+    display: none;
+}
+
+/* Não reserva espaço quando não há mensagem */
+.auth-dialog--register .auth-message:empty {
+    display: none;
+}
+
+.auth-dialog--register .auth-message {
+    margin: 0 0 16px;
+    color: #ffd3d3;
+}
+
+.auth-dialog--register .auth-message[data-success="true"] {
+    color: #d1f0d4;
+}
+
+/* Duas colunas: nome/e-mail e senha/confirmação */
+.auth-dialog--register .auth-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 26px;
+}
+
+.auth-dialog--register .auth-field {
+    min-width: 0;
+}
+
+.auth-dialog--register label {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+/* Campos transparentes */
+.auth-dialog--register input {
+    width: 100%;
+    height: 46px;
+    padding: 10px 12px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+/* Botão menor e centralizado */
+.auth-dialog--register .auth-submit {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    margin: 38px auto 6px;
+    padding: 10px 16px;
+    transition: 0.2s;
+    border: 2px solid #8c5458;
+    border-radius: 0;
+    background: #772d31;
+
+    font-family: var(--fonte-secundaria);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+/* Texto abaixo do botão */
+.auth-dialog--register .auth-switch-p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.auth-dialog--register .auth-switch {
+    font: inherit;
+}
+
+/* Mantém o fechamento acessível */
+.auth-dialog--register .auth-close {
+    top: 12px;
+    right: 16px;
+    color: white;
+}
+
+/* Adaptação para telas estreitas */
+@media (max-width: 540px) {
+    .auth-dialog.auth-dialog--register {
+        padding: 40px 24px 28px;
+        border-radius: 28px;
+    }
+
+    .auth-dialog--register h2 {
+        margin-bottom: 24px;
+        font-size: 34px;
+    }
+
+    .auth-dialog--register .auth-fields {
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+    }
+
+    .auth-dialog--register .auth-submit {
+        margin-top: 24px;
+    }
+}
+
+/* Reduz espaçamentos em telas com pouca altura */
+@media (max-height: 650px) {
+    .auth-dialog.auth-dialog--register {
+        padding-top: 32px;
+        padding-bottom: 24px;
+    }
+
+    .auth-dialog--register h2 {
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .auth-dialog--register .auth-fields {
+        row-gap: 12px;
+    }
+
+    .auth-dialog--register .auth-submit {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) { .auth-dialog { padding: 1.25rem; } }
+
+/* Botao de saida: visivel somente durante uma sessao autenticada. */
+
+.auth-logout[hidden], .auth-logout-message[hidden] { 
+    display: none !important; 
+}
+
+.auth-logout { 
+    vertical-align: middle; 
+    padding: .4rem .8rem; 
+    border: 1px solid var(--amarelo); 
+    border-radius: 4px; 
+    background: transparent; 
+    color: var(--amarelo); 
+    font: 1rem var(--fonte-principal); 
+    cursor: pointer; 
+}
+
+.auth-logout:hover { 
+    background: #772d31; 
+    color: white; 
+}
+
+.auth-logout:focus-visible { 
+    outline: 2px solid var(--amarelo); 
+    outline-offset: 3px; 
+}
+
+.auth-logout:disabled { 
+    opacity: .65; 
+    cursor: wait; 
+}
+
+.auth-logout-message { 
+    position: fixed; 
+    top: 5rem; 
+    right: 1rem; 
+    max-width: min(360px, calc(100vw - 2rem)); 
+    padding: .75rem; 
+    border: 1px solid #a1353c; 
+    border-radius: 4px; 
+    background: #f2ebe0; 
+    color: #3b0e11; 
+    font: 1rem/1.4 var(--fonte-principal); 
+}

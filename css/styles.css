@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=El+Messiri:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Kaku+Gothic+New&display=swap');
+
+@import url('header.css');
+@import url('main.css');
+@import url('portfolio.css');
+@import url('flashtattoo.css');
+@import url('hover.css');
+@import url('sobre-mim.css');
+@import url('portal adm.css');
+@import url('agendamento.css');
+@import url('calendario.css');
+
+
+:root {
+    --fonte-principal: "Zen Kaku Gothic New", sans-serif;
+    --fonte-secundaria: "Cormorant Garamond", serif;
+    --fonte-logo: "Playfair Display", serif;
+    --fonte-logo-header: "El Messiri", sans-serif;
+    --amarelo: #DDA44F;
+
+}
+
+body {
+   overflow-x: hidden;
+}
+
