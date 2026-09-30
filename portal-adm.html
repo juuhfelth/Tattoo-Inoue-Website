@@ -1,176 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal Administrativo | Tattoo Inoue</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/portal-adm.css" />
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portal Administrativo | Tattooo Inoue</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/portal adm.css">
+    </head>
+    <body>
+            
     <header class="container_header">
-      <nav class="navbar">
-        <div class="logo">
-          <a href="#" class="container_logo">TATTOO INOUE</a>
-        </div>
+        <nav class="navbar">
 
-        <ul class="lista_menu">
-          <li class="lista_menu-item">
-            <a href="#inicio" class="lista_menu-link">Início</a>
-          </li>
-          <li class="lista_menu-item">
-            <a href="#agenda" class="lista_menu-link">Agenda</a>
-          </li>
-          <li class="lista_menu-item">
-            <a href="#solicitacoes" class="lista_menu-link">Solicitações</a>
-          </li>
-        </ul>
+            <div class="logo">
+                <a href="#" class="container_logo">TATTOO INOUE</a>
+            </div>
 
-        <div class="container_icons">
-          <a href="#" class="link_icon__agenda"
-            ><img class="icon_agenda" src="assets/agenda item.svg"/></a>
-          
-            <a href="#" class="link_icon__perfil"
-            ><img class="icon_user" src="assets/User.svg" alt="Perfil"/></a>
-        </div>
-    
-      </nav>
+            <ul class="lista_menu">
+                <li class="lista_menu-item">
+                    <a href="#inicio" class="lista_menu-link">Início</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="#agenda" class="lista_menu-link">Agenda</a>
+                </li>
+                <li class="lista_menu-item">
+                    <a href="#solicitações" class="lista_menu-link">Solicitações</a>
+                </li>
+            </ul>
+
+            <div class="container_icons">
+                <a href="#" class="link_icon__agenda"><img class="icon_agenda" src="assets/agenda item.svg"></a>
+                <a href="#" class="link_icon__login"><img class="icon_login" src="assets/login item.svg"></a>
+                <span class="auth-user" hidden><img class="icon_user" src="assets/User.svg" alt="Usuário conectado"></span>
+                <button type="button" class="auth-logout" aria-label="Sair da conta" title="Sair da conta" hidden>
+                    <img class="icon_logout" src="assets/Logout.svg" alt="">
+                </button>
+                <span class="auth-logout-message" role="status" aria-live="polite" hidden></span>
+            </div>
+
+        </nav>
+
     </header>
 
+    <section class="section__main">
 
-  <section class="section__main">
-     <h2 class="section__main-titulo">saudacaoPorHorario(), Milene!</h2> 
+        <h2>Bem vinda Milene!</h2>
+        
 
-<div class="cards_resumo">
-  <div class="card_resumo card_resumo--destaque">
-    <p class="card_resumo-titulo">Solicitações pendentes</p>
-    <p class="card_resumo-numero">04</p>
-    <a href="#" class="card_resumo-link">Acessar solicitações</a>
-  </div>
-  <div class="card_resumo">
-    <p class="card_resumo-titulo">Sessões hoje</p>
-    <p class="card_resumo-numero">02</p>
-    <p class="card_resumo-legenda">Início: 11:30</p>
-  </div>
-  <div class="card_resumo">
-    <p class="card_resumo-titulo">Solicitações confirmadas</p>
-    <p class="card_resumo-numero">09</p>
-    <p class="card_resumo-legenda">Neste mês</p>
-  </div>
-  <div class="card_resumo">
-    <p class="card_resumo-titulo">Próxima sessão</p>
-    <p class="card_resumo-numero">11:30</p>
-    <p class="card_resumo-legenda">Maria Carolina Abreu</p>
-  </div>
-</div>
+    </section>
 
-
-<div class="painel_principal">
-
-  <div class="coluna_principal">
-    
-    <div class="bloco_agenda">
-      <div class="bloco_agenda-header">
-        <div class="titulo-com-badge">
-          <h3 class="bloco_agenda-titulo">Agenda de hoje</h3>
-          <span class="badge-tag">2 sessões</span>
-        </div>
-        <a href="#agenda" class="bloco_agenda-link">Ver agenda &rarr;</a>
-      </div>
-      <p class="data-subtitulo">Terça-Feira, 15 De Setembro</p>
-
-      <div class="lista-itens">
-        <div class="item-linha">
-          <span class="hora">11:30</span>
-          <div class="linha-vertical"></div>
-          <div class="info-cliente">
-            <strong>Maria Carolina Abreu</strong>
-            <p>Floral • Neo oriental</p>
-          </div>
-          <span class="status-tag status--confirmada">Confirmada</span>
-        </div>
-
-        <div class="item-linha">
-          <span class="hora">16:00</span>
-          <div class="linha-vertical"></div>
-          <div class="info-cliente">
-            <strong>Felipe Martins</strong>
-            <p>Samurai • Neo oriental</p>
-          </div>
-          <span class="status-tag status--confirmada">Confirmada</span>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="bloco_solicitacoes">
-      <div class="bloco_solicitacoes-header">
-        <div class="titulo-com-badge">
-          <h3 class="bloco_solicitacoes-titulo">Novas solicitações</h3>
-          <span class="badge-numero">4</span>
-        </div>
-        <a href="#solicitacoes" class="bloco_solicitacoes-link">Ver todas &rarr;</a>
-      </div>
-
-      <div class="lista-itens">
-        <div class="item-linha">
-          <div class="avatar">AS</div>
-          <div class="info-cliente">
-            <strong>André Silva</strong>
-            <p>Um tigre em neo oriental • 22cm</p>
-          </div>
-          <span class="status-tag status--pendente">Pendente</span>
-        </div>
-
-        <div class="item-linha">
-          <div class="avatar">JQ</div>
-          <div class="info-cliente">
-            <strong>Joziana da Quebrada</strong>
-            <p>Dragão Japonês • 60cm</p>
-          </div>
-          <span class="status-tag status--pendente">Pendente</span>
-        </div>
-
-        <div class="item-linha">
-          <div class="avatar">BF</div>
-          <div class="info-cliente">
-            <strong>Beatriz Freitas</strong>
-            <p>Kitsune Oriental • 8cm</p>
-          </div>
-          <span class="status-tag status--pendente">Pendente</span>
-        </div>
-
-        <div class="item-linha">
-          <div class="avatar">LC</div>
-          <div class="info-cliente">
-            <strong>Larissa Carvalho</strong>
-            <p>Lótus Fine Line • 13cm</p>
-          </div>
-          <span class="status-tag status--pendente">Pendente</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="coluna_lateral">
-    <div class="bloco_calendario">
-      <h3 class="bloco_calendario-titulo">Sua agenda</h3>
-      <p class="bloco_calendario-mes">Setembro de 2026</p>
-    </div>
-
-    <div class="bloco_ideia">
-      <h3 class="bloco_ideia-titulo">Espaço para a próxima ideia</h3>
-      <p>Organize uma nova sessão você mesma!</p>
-      <a href="#agendar" class="bloco_ideia-link">Agendar uma sessão &rarr;</a>
-    </div>
-  </div>
-</div>
-  </section>
-
-   <script src="portal-adm.js"></script>
-
-</body>
+    <script src="script.js"></script>
+        
+    </body>
 </html>

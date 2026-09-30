@@ -1,22 +1,14 @@
-# Tattoo Inoue Website
+# Homologação — Tattoo Inoue Website
 
-Site com HTML, CSS e JavaScript no navegador, servidor Node.js com Express e banco SQLite local.
+Esta branch reúne as mudanças que serão testadas antes de entrarem na `main`. O site é executado localmente: cada pessoa abre sua própria cópia em `http://localhost:3000`.
 
-Este guia mostra como uma pessoa convidada pode instalar o projeto, executá-lo no próprio computador e propor alterações.
+> **Importante:** escolher `homolog` no site do GitHub não muda a branch no computador. Confira a branch no terminal antes de cada commit.
 
-## 1. Aceitar o convite
+## 1. Aceitar o convite e preparar o computador
 
-1. Crie uma conta em [github.com](https://github.com/), se ainda não tiver uma.
-2. Abra o convite recebido por e-mail e entre na conta do GitHub que foi convidada.
-3. Aceite o convite para acessar o repositório privado `juuhfelth/Tattoo-Inoue-Website`.
-
-Cada pessoa usa a própria conta. O token e a senha da pessoa que criou o repositório não devem ser compartilhados.
-
-## 2. Preparar o computador
-
-Instale o [Git](https://git-scm.com/install/) e o [Node.js](https://nodejs.org/en/download). O projeto requer Node.js **22.13.0 ou superior**. O npm é instalado junto com o Node.js.
-
-Abra o Terminal no macOS ou o Git Bash no Windows e confira:
+1. Aceite o convite do repositório privado usando sua própria conta do GitHub.
+2. Instale o [Git](https://git-scm.com/install/) e o [Node.js](https://nodejs.org/en/download). Este projeto requer Node.js **22.13.0 ou superior**.
+3. Abra o Terminal no macOS ou o Git Bash no Windows e confira:
 
 ```bash
 git --version
@@ -24,35 +16,49 @@ node --version
 npm --version
 ```
 
-Configure seu nome e e-mail para identificar seus commits. Faça isso uma vez por computador:
+Configure o nome e o e-mail que aparecerão nos seus commits. Isso precisa ser feito apenas uma vez por computador:
 
 ```bash
 git config --global user.name "Seu Nome"
 git config --global user.email "seu-email@example.com"
 ```
 
-## 3. Baixar o projeto
+Cada pessoa usa a própria conta para se autenticar no GitHub. Não compartilhe senhas ou tokens.
 
-Escolha no terminal a pasta onde deseja guardar o projeto. Por exemplo, no macOS:
+## 2. Baixar o projeto pela primeira vez
+
+No terminal, vá até a pasta onde deseja guardar o projeto. Por exemplo, no macOS:
 
 ```bash
 cd ~/Documents
 ```
 
-Copie a URL HTTPS em **Code → HTTPS** na página do repositório e execute:
+Depois, clone o repositório e selecione a branch de homologação:
 
 ```bash
 git clone https://github.com/juuhfelth/Tattoo-Inoue-Website.git
 cd Tattoo-Inoue-Website
+git switch --track origin/homolog
+git branch --show-current
 ```
 
-O `git clone` cria a pasta `Tattoo-Inoue-Website` dentro da pasta escolhida. Em outro computador, o caminho até o projeto será diferente. Não execute `git init` depois de clonar.
+O último comando deve mostrar `homolog`. O `git clone` cria a pasta `Tattoo-Inoue-Website` no local escolhido; não é necessário executar `git init`.
 
-Se o Git pedir autenticação, use sua própria conta do GitHub. Para uma conexão HTTPS, siga o login pelo navegador se ele aparecer; se o terminal pedir `Password`, use um token pessoal da **sua** conta, não a senha comum do GitHub. Nunca coloque o token em arquivos do projeto.
+### Se o projeto já estiver no computador
 
-## 4. Instalar e iniciar
+Entre na pasta do projeto e use:
 
-Execute estes comandos dentro da pasta `Tattoo-Inoue-Website`:
+```bash
+git fetch origin
+git switch homolog
+git branch --show-current
+```
+
+Se `git switch homolog` disser que a branch não existe localmente, execute `git switch --track origin/homolog` depois do `git fetch origin`.
+
+## 3. Instalar e testar o site
+
+Dentro da pasta `Tattoo-Inoue-Website`, instale as dependências e rode os testes:
 
 ```bash
 npm ci
@@ -60,29 +66,25 @@ npm test
 npm start
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no navegador. Mantenha o terminal aberto enquanto usa o site; pressione `Ctrl+C` para parar o servidor.
+Abra [http://localhost:3000](http://localhost:3000) no navegador. Mantenha o terminal aberto enquanto usa o site e pressione `Ctrl+C` para parar o servidor. Abra o endereço `localhost:3000`, não o arquivo `index.html` diretamente.
 
-Nas próximas vezes, entre novamente na pasta do projeto e execute `npm start`. Use `npm ci` novamente se o `package-lock.json` mudar.
+O banco SQLite é criado localmente em `data/tattoo.sqlite`. As contas cadastradas nesse computador não são compartilhadas pelo GitHub. A pasta `node_modules/` também é local. O arquivo `.env.example` mostra configurações opcionais; não é necessário criar `.env` para usar a porta padrão.
 
-Abra o site pelo endereço `localhost:3000`, não clicando diretamente no arquivo `index.html`: o servidor também fornece a API usada pelo cadastro e login.
+## 4. Começar uma nova alteração
 
-### Dados e configuração local
-
-Na primeira execução, o servidor cria `data/tattoo.sqlite` no próprio computador. Esse banco pode guardar contas cadastradas localmente e não é enviado ao GitHub. A pasta `node_modules/` também fica apenas no computador de cada pessoa.
-
-O arquivo `.env.example` mostra configurações opcionais. Não é preciso criar `.env` para usar a porta padrão `3000`. Se precisar mudar a porta, copie `.env.example` para `.env`, altere `PORT` e abra o site nessa nova porta. Não envie `.env` ao GitHub.
-
-## 5. Fazer uma alteração
-
-Antes de cada nova mudança, atualize a versão principal e crie uma branch com um nome que descreva o trabalho:
+Antes de editar, entre na pasta do projeto, selecione `homolog` e traga as mudanças mais recentes da equipe:
 
 ```bash
-git switch main
-git pull
-git switch -c corrige-agendamento
+git switch homolog
+git branch --show-current
+git pull origin homolog
 ```
 
-Edite os arquivos no editor de sua preferência. Depois, confira e teste:
+Confirme que `git branch --show-current` mostrou `homolog`. Em seguida, edite os arquivos no editor de sua preferência.
+
+## 5. Conferir e salvar a alteração
+
+Depois de editar, teste e examine o que mudou:
 
 ```bash
 npm test
@@ -90,58 +92,41 @@ git status
 git diff
 ```
 
-`git status` lista os arquivos alterados; `git diff` mostra o que mudou. Confira as alterações antes de preparar o commit.
+Se precisar conferir o site no navegador, execute `npm start` e abra `http://localhost:3000`.
 
-## 6. Salvar e enviar a mudança
+Quando estiver tudo certo:
 
 ```bash
+git branch --show-current
 git add .
 git status
-git commit -m "Corrige o agendamento"
-git push -u origin corrige-agendamento
+git commit -m "Descreve a alteração feita"
+git push origin homolog
 ```
 
-Troque `corrige-agendamento` pelo nome da sua branch e escreva uma mensagem que descreva sua mudança. O **commit** salva a alteração no seu computador; o **push** envia a branch ao GitHub.
+O primeiro comando deve mostrar `homolog`. O **commit** salva a alteração nessa branch no seu computador; o **push** envia a branch ao GitHub. Revise o resultado de `git status` antes do commit para confirmar que apenas os arquivos esperados foram incluídos.
 
-Antes do commit, confira em `git status` se apenas os arquivos esperados foram preparados. O `.gitignore` do projeto exclui `.env`, `data/` e `node_modules/`.
+O `.gitignore` exclui `.env`, `data/` e `node_modules/`. Não coloque senhas, tokens ou dados reais em arquivos enviados ao GitHub.
 
-## 7. Abrir um Pull Request
+## 6. Depois do envio
 
-1. Abra o repositório no GitHub.
-2. Clique em **Compare & pull request** se o botão aparecer, ou em **Pull requests → New pull request**.
-3. Escolha `main` como destino (**base**) e sua branch como origem (**compare**).
-4. Descreva o que mudou e clique em **Create pull request**.
-5. Aguarde a revisão. Se pedirem ajustes, faça outro commit na mesma branch e execute `git push`; o Pull Request será atualizado.
+Avise a pessoa responsável pela homologação sobre o que mudou e como testar. Ela pode atualizar a branch `homologa` no próprio computador, executar `npm test` e testar o site em `localhost:3000`.
 
-Depois que a mudança for incorporada, comece a próxima a partir da `main` atualizada:
+Quando o conjunto de mudanças da homologação estiver aprovado, a pessoa responsável abre um Pull Request com **base `main`** e **compare `homolog`**. Assim, as alterações passam por revisão antes de entrarem na versão principal.
 
-```bash
-git switch main
-git pull
-git switch -c nome-da-proxima-mudanca
-```
+Se outra pessoa enviou commits para `homolog` antes do seu `git push`, atualize sua cópia com `git pull origin homolog`, resolva eventuais conflitos e tente o `git push` novamente. Não use `git push --force` nessa branch compartilhada.
 
 ## Comandos mais usados
 
-| Comando | O que faz |
+| Comando | Função |
 |---|---|
-| `git status` | Mostra o estado dos arquivos. |
-| `git diff` | Mostra alterações ainda não preparadas. |
-| `git pull` | Traz alterações do GitHub para a branch atual. |
-| `git switch -c nome` | Cria uma branch e muda para ela. |
-| `git add .` | Prepara alterações para o próximo commit. |
+| `git branch --show-current` | Mostra em qual branch você está. |
+| `git switch homolog` | Muda para a branch de homologação. |
+| `git pull origin homolog` | Traz as mudanças recentes da homologação. |
+| `git status` | Mostra os arquivos alterados e preparados. |
+| `git diff` | Mostra as alterações ainda não preparadas. |
+| `git add .` | Prepara as alterações para o commit. |
 | `git commit -m "mensagem"` | Salva uma versão local das alterações. |
-| `git push` | Envia commits ao GitHub. |
+| `git push origin homolog` | Envia a branch de homologação ao GitHub. |
 
-## Arquivos principais
-
-| Caminho | Função |
-|---|---|
-| `index.html`, `css/`, `assets/`, arquivos `.js` na raiz | Páginas e recursos do navegador. |
-| `server/` | Servidor, autenticação e acesso ao banco SQLite. |
-| `tests/` | Testes automatizados. |
-| `package.json`, `package-lock.json` | Dependências e comandos npm. |
-| `.env.example` | Exemplo de configuração local. |
-| `.gitignore` | Lista de arquivos que não devem entrar nos commits. |
-
-O repositório GitHub guarda o código. Executar `npm start` abre o site apenas no computador da pessoa, em `localhost`.
+> **Permissões:** estes comandos orientam o trabalho na branch `homolog`. O GitHub só impedirá envios diretos à `main` se houver uma regra de proteção configurada para ela.
